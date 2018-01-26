@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  unifi:
+    image: goofball222/unifi
+    container_name: unifi
+    hostname: unifi
+    ports:
+     - 3478:3478/udp
+     - 6789:6789
+     - 8080:8080
+     - 8443:8443
+     - 8880:8880
+     - 8843:8843
+     - 10001:10001/udp
+    volumes:
+     - ./cert:/usr/lib/unifi/cert
+     - ./data:/usr/lib/unifi/data
+     - ./logs:/usr/lib/unifi/logs
+
